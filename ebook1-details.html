@@ -14,6 +14,13 @@
             overflow: hidden;
             border-radius: 10px;
         }
+function addToCart(title, price) {
+    let cart = JSON.parse(localStorage.getItem("cart")) || [];
+    cart.push({ title, price });
+    localStorage.setItem("cart", JSON.stringify(cart));
+    window.location.href = "cart.html"; // Redirect to cart page
+}
+
 
         /* Hide all slides by default */
         .slide {
@@ -152,9 +159,9 @@
             <p><strong>Pages:</strong> 150</p>
             <p><strong>Price:</strong> ₱100.00</p>
             <p><strong>Description:</strong> "Freelance Web Design Guide" is a must-read for aspiring and experienced web designers looking to build a successful freelance career. This eBook covers everything from mastering essential design principles and coding techniques to finding clients, pricing your services, and managing projects effectively. Whether you're just starting or looking to scale your freelance business, this guide provides actionable tips, real-world insights, and proven strategies to help you thrive in the competitive world of web design.</p>
-            <a href="cart.html" class="buy-button">Buy Now</a>
-<a href="homepage.html" class="Home-button">Home</a>
-<a href="index.html" class="Index-button">Explore</a>
+            <a href="cart.html" button onclick="Buy Now">Buy Now</a>
+<a href="homepage.html" button onclick="Home">Home</a>
+<a href="index.html" button onclick="Explore">Explore</a>
         </section>
     </main>
     
