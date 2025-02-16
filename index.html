@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ebook Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #000;
+            margin: 0;
+            padding: 0;
+            background: none;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px;
+        }
+        .header img {
+            height: 50px;
+        }
+        .search-bar {
+            flex-grow: 1;
+            margin: 0 15px;
+        }
+        .search-bar input {
+            width: 80%;
+            padding: 8px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+        .search-bar button {
+            padding: 8px 12px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .nav-links a {
+            color: #000;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        .auth-links {
+            margin-left: 10px;
+        }
+        .auth-links a {
+            color: #000;
+            text-decoration: none;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+        .book-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .book {
+            padding: 10px;
+            margin: 10px;
+            width: 200px;
+            background: none;
+            color: #000;
+            transition: transform 0.3s;
+            box-shadow: none;
+            border: none;
+        }
+        .book:hover {
+            transform: scale(1.05);
+        }
+        .tagline {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+            color: #555;
+        }
+        .book img {
+            width: 100%;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        .book a {
+            text-decoration: none;
+            color: inherit;
+        }
+    </style>
+    <script>
+        function searchBooks() {
+            let input = document.getElementById("search-input").value.toLowerCase();
+            let books = document.querySelectorAll(".book");
+            
+            books.forEach(book => {
+                let title = book.querySelector("h3").innerText.toLowerCase();
+                if (title.includes(input)) {
+                    book.style.display = "block";
+                } else {
+                    book.style.display = "none";
+                }
+            });
+        }
+    </script>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.jpg" alt="Ebook Store Logo">
+        <div class="search-bar">
+            <input type="text" id="search-input" placeholder="Search for books...">
+            <button onclick="searchBooks()">Search</button>
+        </div>
+        <div class="nav-links">
+            <a href="homepage.html">Home</a>
+            <a href="explore.html">Explore</a>
+            <a href="cart.html">Cart</a>
+        </div>
+        <div class="auth-links">
+            <a href="signin.html">Sign In</a>
+            <a href="signout.html">Sign Out</a>
+        </div>
+    </div>
+    
+    <h1>Welcome to Our Ebook Store</h1>
+    <p class="tagline">Discover, Read, and Explore a World of Knowledge!</p>
+    <div class="book-container">
+        <div class="book">
+            <a href="ebook1-details.html">
+                <img src="ebook 1.png" alt="Ebook 1 Cover">
+                <h3>Freelance Web Design</h3>
+            </a>
+        </div>
+        <div class="book">
+            <a href="ebook2-details.html">
+                <h3>Ebook 2</h3>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
