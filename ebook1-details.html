@@ -153,6 +153,8 @@
             <p><strong>Price:</strong> ₱100.00</p>
             <p><strong>Description:</strong> "Freelance Web Design Guide" is a must-read for aspiring and experienced web designers looking to build a successful freelance career. This eBook covers everything from mastering essential design principles and coding techniques to finding clients, pricing your services, and managing projects effectively. Whether you're just starting or looking to scale your freelance business, this guide provides actionable tips, real-world insights, and proven strategies to help you thrive in the competitive world of web design.</p>
             <a href="purchase.html" class="buy-button">Buy Now</a>
+<a href="homepage.html" class="Home-button">Home</a>
+<a href="index.html" class="Index-button">Explore</a>
         </section>
     </main>
     
@@ -164,7 +166,7 @@
         let slideIndex = 0;
         let slides = document.querySelectorAll(".slide");
         let dots = document.querySelectorAll(".dot");
-        let autoSlide = setInterval(() => changeSlide(1), 2000); // Auto-slide every 3 sec
+        let autoSlide = setInterval(() => changeSlide(1), 3000); // Auto-slide every 3 sec
 
         function showSlides(n) {
             if (n >= slides.length) { slideIndex = 0; }
@@ -195,10 +197,10 @@
         });
 
         document.querySelector(".slideshow-container").addEventListener("mouseleave", () => {
-            autoSlide = setInterval(() => changeSlide(1), 2000);
+            autoSlide = setInterval(() => changeSlide(1), 3000);
         });
 
         showSlides(slideIndex); // Initialize slideshow
     </script>
 </body>
-</html> 
+</html>
