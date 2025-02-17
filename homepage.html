@@ -5,103 +5,267 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JAEbookShop.com</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            text-align: center;
-            background: #f0f8ff;
-            color: #000;
-        }
-        header {
-            background: #007BFF;
-            color: white;
-            padding: 20px;
-       h1 {
-    font-size: 3.2rem;
-    font-family: 'Pacifico', cursive; /* Use Google Fonts */
-    color: #ff4081;
-    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.2);
-    animation: fadeInScale 1.5s ease-in-out;
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Scale animation */
-@keyframes fadeInScale {
-    from {
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background: #F4F4F4; /* Light Beige Background */
+    color: #2C3E50; /* Dark Charcoal Text */
+}
+
+header {
+    width: 100%;
+    height: 350px;
+    background: url('homepageh1.png') no-repeat center center/cover;
+    position: relative;
+    background-color: #717959; /* Olive Green Header */
+}
+
+nav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+}
+
+nav a {
+    background: #717959; /* Olive Green Buttons */
+    color: white;
+    text-decoration: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    font-size: 16px;
+    display: inline-block;
+}
+
+nav a:hover {
+    background: #5F8C4E; /* Darker Green on Hover */
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background: #A9D6E5; /* Soft Light Green Background */
+}
+
+.hero {
+    padding: 50px;
+    background: #FFFFFF;
+    width: 50%;
+    height: 80vh;
+    position: relative;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    overflow: hidden;
+}
+
+/* Hero Title - Creative Word Placement */
+.hero h1 {
+    font-size: 3em;
+    font-weight: bold;
+    color: #2C3E50;
+    letter-spacing: 2px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.hero h1 span {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeInUp 1.2s ease-in-out forwards;
+    font-size: 2em;
+    font-weight: bold;
+    color: #717959;
+    transition: transform 0.3s ease-in-out;
+}
+
+.hero h1 span:nth-child(1) { animation-delay: 0.2s; }
+.hero h1 span:nth-child(2) { animation-delay: 0.4s; }
+.hero h1 span:nth-child(3) { animation-delay: 0.6s; }
+.hero h1 span:nth-child(4) { animation-delay: 0.8s; }
+.hero h1 span:nth-child(5) { animation-delay: 1s; }
+.hero h1 span:nth-child(6) { animation-delay: 1.2s; }
+.hero h1 span:nth-child(7) { animation-delay: 1.4s; }
+.hero h1 span:nth-child(8) { animation-delay: 1.6s; }
+
+/* Hover Effect for Words */
+.hero h1 span:hover {
+    color: #5F8C4E;
+    transform: scale(1.2) rotate(-5deg);
+}
+
+/* Smooth Fade-in Text Animation */
+@keyframes fadeInUp {
+    0% {
         opacity: 0;
-        transform: scale(0.8);
+        transform: translateY(30px);
     }
-    to {
+    100% {
         opacity: 1;
-        transform: scale(1);
+        transform: translateY(0);
     }
 }
+
+/* Hero Paragraphs */
+.hero p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-top: 20px;
+    color: #555;
+    opacity: 0;
+    animation: fadeIn 2s forwards 1.5s;
 }
-             }
-        nav {
-            background: #0056b3;
-            padding: 10px;
-        }
-        nav a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 15px;
-            display: inline-block;
-        }
-        .hero {
-            padding: 50px;
-            background: #e3f2fd;
-        }
-        .hero h1 {
-            margin-bottom: 10px;
-        }
-        .cta {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #007BFF;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-        }
-        .featured {
-            padding: 20px;
-        }
-        .ebook {
-            display: inline-block;
-            margin: 10px;
-            padding: 10px;
-            border: 1px solid #ddd;
-            background: white;
-        }
-        .about-contact {
-            padding: 20px;
-            background: #f8f9fa;
-        }
-        footer {
-            background: #003366;
-            color: white;
-            padding: 20px;
-            margin-top: 20px;
-        }
+
+/* Ensure animations trigger correctly */
+.hero p, .cta {
+    opacity: 1;
+    animation: fadeIn 2s forwards;
+}
+
+/* CTA Button */
+.cta {
+    display: inline-block;
+    padding: 15px 40px;
+    background: #717959;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.5em;
+    position: absolute;
+    bottom: 30px; /* Ensure it's within the section */
+    left: 50%;
+    transform: translateX(-50%);
+    opacity: 1; /* Set opacity to 1 to make it visible */
+    animation: fadeIn 3s forwards 2s; /* Adjust the delay time as needed */
+    transition: background 0.3s ease-in-out;
+}
+
+.cta:hover {
+    background: #5F8C4E;
+    transform: scale(1.1);
+}
+
+
+.image-gallery {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 40%;
+}
+
+.image-gallery img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.featured {
+    padding: 20px;
+    background: #F4F4F4; /* Light Beige Background for Featured Section */
+}
+
+.ebook {
+    display: inline-block;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid #DDD;
+    background: #FFF;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+}
+
+.ebook h3 {
+    color: #2C3E50;
+}
+
+.ebook p {
+    color: #717959; /* Olive Green for Subheadings */
+}
+
+.about-contact {
+    padding: 50px;
+    background: #FFFFFF; /* White Background for About & Contact */
+    margin-top: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+footer {
+    background: #717959; /* Olive Green Footer */
+    color: white;
+    padding: 20px;
+    margin-top: 20px;
+}
+
+footer a {
+    color: #A9D6E5; /* Soft Light Green for Footer Links */
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
     </style>
 </head>
 <body>
     <header>
-        <h1>JAEbookShop</h1>
-        <p>Your One-Stop Shop for Inspiring eBooks</p>
+        <nav>
+            <a href="index.html">Explore</a>
+            <a href="cart.html">Cart</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
-    <nav>
-        <a href="index.html">Explore</a>
-        <a href="cart.html">Cart</a>
-        <a href="#about">About</a>
-      <a href="#Contact">Contact</a>
-    </nav>
-    <section class="hero">
-        <h1>Find the Perfect eBook for Your Daily Needs</h1>
-        <p>Discover a variety of eBooks to enhance your daily life.</p>
-        <p>Welcome! I'm J.A Necesario, a passionate eBook seller. I provide a collection of handpicked eBooks to help you grow, learn, and succeed every day.</p>
-        <a href="index.html" class="cta">Shop Now</a>
+
+ <section class="container">
+  <section class="hero">
+    <h1>
+        <span>Find</span> 
+        <span>the</span> 
+        <span>Perfect</span> 
+        <span>eBook</span> 
+        <span>for</span> 
+        <span>Your</span> 
+        <span>Daily</span> 
+        <span>Needs</span>
+    </h1>
+    <p>Discover a vast collection of eBooks designed to enhance every aspect of your life. Whether you're looking to improve your productivity, learn new skills, or find inspiration, we have something for everyone.</p>
+
+    <p>As an eBook enthusiast, I, <b>J.A. Necesario</b>, am committed to providing high-quality resources that empower you. Join me on this journey and unlock knowledge that transforms your daily life.</p>
+
+    <a href="index.html" class="cta">Shop Now</a>
+</section>
+
+
+    <section class="image-gallery">
+        <img src="image1.jpg" alt="Image 1">
+        <img src="image2.jpg" alt="Image 2">
+        <img src="image3.jpg" alt="Image 3">
     </section>
+</section>
+
+
+
     <section class="featured">
         <h2>Featured eBooks</h2>
         <div class="ebook">
@@ -113,14 +277,21 @@
             <p>Learn how to stay present and focused.</p>
         </div>
     </section>
-    <section id="about-contact" class="about-contact">
+
+    <!-- About Section -->
+    <section id="about" class="about-contact">
         <h2>About Us</h2>
         <p>We are dedicated to providing high-quality eBooks that help improve your daily life.</p>
         <p>J.A Necesario - Curating the best eBooks to inspire, educate, and empower you.</p>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="about-contact">
         <h2>Contact Us</h2>
         <p>Email: necesariojudyann5@gmail.com</p>
         <p>WhatsApp: +639 541 562 102</p>
     </section>
+
     <footer>
         <p>&copy; 2025 eBook Store | Follow us on <a href="#">Social Media</a></p>
     </footer>
