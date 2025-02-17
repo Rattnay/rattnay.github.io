@@ -17,12 +17,25 @@
             background: #007BFF;
             color: white;
             padding: 20px;
-       h1 {
+        h1 {
     font-size: 3rem;
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 2px;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+/* Keyframe Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
              }
         nav {
