@@ -6,67 +6,66 @@
     <title>JAEbookShop.com</title>
     <style>
         * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-html {
-    scroll-behavior: smooth;
-}
+        html {
+            scroll-behavior: smooth;
+        }
 
-body {
-    font-family: Arial, sans-serif;
-    text-align: center;
-    background: #F4F4F4; /* Light Beige Background */
-    color: #2C3E50; /* Dark Charcoal Text */
-}
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            color: #2C3E50; /* Dark Charcoal Text */
+        }
 
-header {
-    width: 100%;
-    height: 350px;
-    background: url('homepageh1.png') no-repeat center center/cover;
-    position: relative;
-    background-color: #717959; /* Olive Green Header */
-}
+        header {
+            width: 100%;
+            height: 350px;
+            background: url('homepageh1.png') no-repeat center center/cover;
+            position: relative;
+            background-color: #717959; /* Olive Green Header */
+        }
 
-nav {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    padding: 20px;
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-}
+        nav {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            padding: 20px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 100%;
+        }
 
-nav a {
-    background: #717959; /* Olive Green Buttons */
-    color: white;
-    text-decoration: none;
-    padding: 10px 15px;
-    margin: 5px;
-    border-radius: 5px;
-    font-size: 16px;
-    display: inline-block;
-}
+        nav a {
+            background: #717959; /* Olive Green Buttons */
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            margin: 5px;
+            border-radius: 5px;
+            font-size: 16px;
+            display: inline-block;
+        }
 
-nav a:hover {
-    background: #5F8C4E; /* Darker Green on Hover */
-}
+        nav a:hover {
+            background: #5F8C4E; /* Darker Green on Hover */
+        }
 
-.container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px;
-    background: #A9D6E5; /* Soft Light Green Background */
-}
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            padding: 40px;
+            background: #A9D6E5; /* Soft Light Green Background */
+        }
 
-.hero {
+       .hero {
     padding: 50px;
-    background: #FFFFFF;
     width: 50%;
     height: 80vh;
     position: relative;
@@ -75,48 +74,81 @@ nav a:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    text-align: left;
+    text-align: center;
     overflow: hidden;
+    align-items: center;
+    background: transparent; /* Set background to transparent */
+    animation: fadeInUp 1.5s ease-in-out;
 }
 
-/* Hero Title - Creative Word Placement */
-.hero h1 {
-    font-size: 3em;
-    font-weight: bold;
-    color: #2C3E50;
-    letter-spacing: 2px;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
+        .hero .title {
+            font-size: 3em;
+            font-weight: bold;
+            color: #2C3E50;
+            letter-spacing: 2px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .hero .title span {
+            display: inline-block;
+            opacity: 0;
+            animation: fadeInUp 1.2s ease-in-out forwards;
+            font-size: 2em;
+            font-weight: bold;
+            color: #717959;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .hero .title span:nth-child(1) { animation-delay: 0.2s; }
+        .hero .title span:nth-child(2) { animation-delay: 0.4s; }
+        .hero .title span:nth-child(3) { animation-delay: 0.6s; }
+        .hero .title span:nth-child(4) { animation-delay: 0.8s; }
+        .hero .title span:nth-child(5) { animation-delay: 1s; }
+        .hero .title span:nth-child(6) { animation-delay: 1.2s; }
+        .hero .title span:nth-child(7) { animation-delay: 1.4s; }
+        .hero .title span:nth-child(8) { animation-delay: 1.6s; }
+
+        /* Hover Effect for Words */
+        .hero .title span:hover {
+            color: #5F8C4E;
+            transform: scale(1.2) rotate(-5deg);
+        }
+
+        /* Smooth Fade-in Text Animation */
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Hero Paragraphs */
+        .hero p {
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-top: 20px;
+            color: #555;
+            opacity: 0;
+            animation: fadeIn 2s forwards 1.5s;
+        }
+.hero p {
+    font-size: 1.2em;
+    line-height: 1.6;
+    margin-top: 20px;
+    color: #555;
+    opacity: 1; /* Ensure the paragraph is visible */
+    animation: fadeIn 2s ease forwards; /* Apply fade-in animation */
+    animation-delay: 1.5s; /* Delay it to ensure it appears after the title */
 }
 
-.hero h1 span {
-    display: inline-block;
-    opacity: 0;
-    animation: fadeInUp 1.2s ease-in-out forwards;
-    font-size: 2em;
-    font-weight: bold;
-    color: #717959;
-    transition: transform 0.3s ease-in-out;
-}
-
-.hero h1 span:nth-child(1) { animation-delay: 0.2s; }
-.hero h1 span:nth-child(2) { animation-delay: 0.4s; }
-.hero h1 span:nth-child(3) { animation-delay: 0.6s; }
-.hero h1 span:nth-child(4) { animation-delay: 0.8s; }
-.hero h1 span:nth-child(5) { animation-delay: 1s; }
-.hero h1 span:nth-child(6) { animation-delay: 1.2s; }
-.hero h1 span:nth-child(7) { animation-delay: 1.4s; }
-.hero h1 span:nth-child(8) { animation-delay: 1.6s; }
-
-/* Hover Effect for Words */
-.hero h1 span:hover {
-    color: #5F8C4E;
-    transform: scale(1.2) rotate(-5deg);
-}
-
-/* Smooth Fade-in Text Animation */
-@keyframes fadeInUp {
+@keyframes fadeIn {
     0% {
         opacity: 0;
         transform: translateY(30px);
@@ -127,103 +159,101 @@ nav a:hover {
     }
 }
 
-/* Hero Paragraphs */
-.hero p {
-    font-size: 1.2em;
-    line-height: 1.6;
-    margin-top: 20px;
-    color: #555;
-    opacity: 0;
-    animation: fadeIn 2s forwards 1.5s;
-}
+        .cta {
+            display: inline-block;
+            padding: 15px 40px;
+            background: #717959;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.5em;
+            position: relative; /* Change from absolute */
+            margin: 40px auto; /* Auto margin centers horizontally */
+            display: block; /* Ensures it behaves like a block element */
+            text-align: center; /* Centers text inside the button */
+            width: fit-content; /* Ensures button size adapts to content */
+            transition: background 0.3s ease-in-out;
+        }
 
-/* Ensure animations trigger correctly */
-.hero p, .cta {
-    opacity: 1;
-    animation: fadeIn 2s forwards;
-}
+        .cta:hover {
+            background: #5F8C4E;
+            transform: scale(1.1);
+        }
 
-/* CTA Button */
-.cta {
-    display: inline-block;
-    padding: 15px 40px;
-    background: #717959;
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-size: 1.5em;
-    position: absolute;
-    bottom: 30px; /* Ensure it's within the section */
-    left: 50%;
-    transform: translateX(-50%);
-    opacity: 1; /* Set opacity to 1 to make it visible */
-    animation: fadeIn 3s forwards 2s; /* Adjust the delay time as needed */
-    transition: background 0.3s ease-in-out;
-}
+        .image-gallery {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            animation: floatUp 2s ease-out forwards; /* Image gallery floating */
+            animation-delay: 0.5s; /* Delay for images to animate after hero */
+        }
 
-.cta:hover {
-    background: #5F8C4E;
-    transform: scale(1.1);
-}
+        /* Individual Images in Gallery */
+        .image-gallery img {
+            width: 20%;
+            border-radius: 50px;
+            opacity: 0;
+            animation: floatImage 3s ease-in-out forwards;
+            animation-delay: 0.7s; /* Stagger delay for each image */
+        }
 
+        /* Floating animation */
+        @keyframes floatImage {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
 
-.image-gallery {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 40%;
-}
+        .featured {
+            padding: 20px;
+            background: #F4F4F4; /* Light Beige Background for Featured Section */
+        }
 
-.image-gallery img {
-    width: 100%;
-    border-radius: 10px;
-}
+        .ebook {
+            display: inline-block;
+            margin: 10px;
+            padding: 10px;
+            border: 1px solid #DDD;
+            background: #FFF;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
 
-.featured {
-    padding: 20px;
-    background: #F4F4F4; /* Light Beige Background for Featured Section */
-}
+        .ebook h3 {
+            color: #2C3E50;
+        }
 
-.ebook {
-    display: inline-block;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid #DDD;
-    background: #FFF;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-}
+        .ebook p {
+            color: #717959; /* Olive Green for Subheadings */
+        }
 
-.ebook h3 {
-    color: #2C3E50;
-}
+        .about-contact {
+            padding: 50px;
+            background: #FFFFFF; /* White Background for About & Contact */
+            margin-top: 50px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
 
-.ebook p {
-    color: #717959; /* Olive Green for Subheadings */
-}
+        footer {
+            background: #717959; /* Olive Green Footer */
+            color: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
 
-.about-contact {
-    padding: 50px;
-    background: #FFFFFF; /* White Background for About & Contact */
-    margin-top: 50px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+        footer a {
+            color: #A9D6E5; /* Soft Light Green for Footer Links */
+            text-decoration: none;
+        }
 
-footer {
-    background: #717959; /* Olive Green Footer */
-    color: white;
-    padding: 20px;
-    margin-top: 20px;
-}
-
-footer a {
-    color: #A9D6E5; /* Soft Light Green for Footer Links */
-    text-decoration: none;
-}
-
-footer a:hover {
-    text-decoration: underline;
-}
+        footer a:hover {
+            text-decoration: underline;
+        }
 
     </style>
 </head>
@@ -237,34 +267,31 @@ footer a:hover {
         </nav>
     </header>
 
- <section class="container">
-  <section class="hero">
-    <h1>
-        <span>Find</span> 
-        <span>the</span> 
-        <span>Perfect</span> 
-        <span>eBook</span> 
-        <span>for</span> 
-        <span>Your</span> 
-        <span>Daily</span> 
-        <span>Needs</span>
-    </h1>
-    <p>Discover a vast collection of eBooks designed to enhance every aspect of your life. Whether you're looking to improve your productivity, learn new skills, or find inspiration, we have something for everyone.</p>
+    <section class="container">
+        <section class="hero">
+            <div class="title">
+                <span>Find</span> 
+                <span>the</span> 
+                <span>Perfect</span> 
+                <span>eBook</span> 
+                <span>for</span> 
+                <span>Your</span> 
+                <span>Daily</span> 
+                <span>Needs</span>
+            </div>
+            <p>Discover a vast collection of eBooks designed to enhance every aspect of your life. Whether you're looking to improve your productivity, learn new skills, or find inspiration, we have something for everyone.</p>
 
-    <p>As an eBook enthusiast, I, <b>J.A. Necesario</b>, am committed to providing high-quality resources that empower you. Join me on this journey and unlock knowledge that transforms your daily life.</p>
+            <p>As an eBook enthusiast, I, <b>J.A. Necesario</b>, am committed to providing high-quality resources that empower you. Join me on this journey and unlock knowledge that transforms your daily life.</p>
 
-    <a href="index.html" class="cta">Shop Now</a>
-</section>
+            <a href="index.html" class="cta">Shop Now</a>
+        </section>
 
-
-    <section class="image-gallery">
-        <img src="image1.jpg" alt="Image 1">
-        <img src="image2.jpg" alt="Image 2">
-        <img src="image3.jpg" alt="Image 3">
+        <section class="image-gallery">
+            <img src="display 1.png" alt="Image 1">
+            <img src="display 2.png" alt="Image 2">
+            <img src="display 3.png" alt="Image 3">
+        </section>
     </section>
-</section>
-
-
 
     <section class="featured">
         <h2>Featured eBooks</h2>
@@ -278,14 +305,12 @@ footer a:hover {
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about-contact">
         <h2>About Us</h2>
         <p>We are dedicated to providing high-quality eBooks that help improve your daily life.</p>
         <p>J.A Necesario - Curating the best eBooks to inspire, educate, and empower you.</p>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="about-contact">
         <h2>Contact Us</h2>
         <p>Email: necesariojudyann5@gmail.com</p>
