@@ -3,80 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="JAEbookShop – A digital platform for high-quality, practical eBooks. Learn, grow, and improve your daily life.">
     <title>About</title>
+    <script src="https://kit.fontawesome.com/YOUR-ACTUAL-KIT.js" crossorigin="anonymous"></script>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #000;
-            color: #fff;
-        }
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: #111;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(128, 0, 128, 0.5);
-            text-align: center;
-        }
-        h1, h2, h3 {
-            color: #a020f0;
-        }
-        ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        ul li {
-            margin: 5px 0;
-        }
-        .contact-info {
-            margin-top: 20px;
-            padding: 10px;
-            background: #222;
-            border-radius: 5px;
-            color: #a020f0;
-        }
-        a {
-            color: #a020f0;
-            text-decoration: none;
-        }
-        .profile-img {
-            width: 150px;
-            height: 150px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-bottom: 15px;
-            border: 3px solid #a020f0;
-        }
+        * /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Arial", sans-serif;
+     background-color: #000000;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    overflow-x: hidden; /* Allow vertical scrolling */
+}
+
+/* Navbar Styles */
+.navbar {
+    width: 100%;
+    background: none;
+    display: flex;
+    justify-content: left;
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+}
+
+/* Navigation Links */
+.navbar a {
+    text-decoration: none;
+background: #4A90E2;
+    color: white;
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 16px;
+}
+
+.navbar a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
+
+/* Mobile Navigation */
+.navbar-toggle {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+    background: none;
+    border: none;
+    padding: 10px;
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+    .navbar a {
+        display: none;
+    }
+    .navbar.active a {
+        display: block;
+        text-align: center;
+    }
+    .navbar-toggle {
+        display: block;
+    }
+}
+
+/* Slideshow Styles */
+.slideshow-container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.slide {
+    width: 100%;
+    height: 100%;
+    object-fit: contain; /* Ensures images fit properly */
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+}
+
+.active {
+    opacity: 1;
+    position: relative;
+}
+
+/* Slideshow Navigation */
+.prev, .next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    font-size: 18px;
+    z-index: 10;
+}
+
+.prev { left: 10px; }
+.next { right: 10px; }
+.prev:hover, .next:hover { background: rgba(0, 0, 0, 0.8); }
+
+/* Contact Info */
+.contact-info {
+    text-align: center;
+    padding: 0px 10;
+    width: 100%;
+    font-size: 16px;
+      background-color: #4A90E2;
+    color: white;
+}
+
+.contact-info a {
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    margin: 0 10px;
+}
+
+.contact-info a:hover {
+    color: #d0d0d0;
+}
+
+.contact-info img {
+    width: 24px;
+    vertical-align: middle;
+}
+
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>About Me</h1>
-        <h2>Welcome to JAEbookShop!</h2>
-        <p>Hi, I’m <strong>JA Necesario</strong>—a web designer, aspiring entrepreneur, and passionate educator. I created this platform to provide <strong>practical eBooks for everyday use</strong>, helping individuals learn, grow, and improve their daily routines.</p>
-        
-        <h2>My Mission</h2>
-        <p>I believe that knowledge should be <strong>accessible and convenient</strong> for everyone. My goal is to offer <strong>affordable and well-designed eBooks</strong> that are both informative and easy to use.</p>
-        
-        <h2>Why This Website?</h2>
-        <ul>
-            <li>✔️ <strong>Curated, High-Quality Content</strong> – Each eBook is carefully selected and designed to be clear, engaging, and practical.</li>
-            <li>✔️ <strong>User-Friendly Experience</strong> – With my background in <em>computer and communication technology</em> and <em>web design</em>, I ensure a seamless and enjoyable browsing experience.</li>
-            <li>✔️ <strong>Passion for Learning & Teaching</strong> – As someone with teaching experience, I aim to make learning simple, effective, and accessible.</li>
-        </ul>
-        
-        <h2>About Me</h2>
-        <p>With a <strong>Bachelor’s degree in Computer and Communication</strong> and <strong>teaching experience as a teacher’s assistant</strong>, I have a strong foundation in both technology and education. My dream is to <strong>build my own company</strong> and create digital solutions that benefit people worldwide.</p>
-        
-        <div class="contact-info">
-            <h2>Let’s Connect!</h2>
-            <p>📧 Email: <a href="jaebookshop@email.com">your@email.com</a></p>
-            <p>🌐 Website: <a href="#">jaebookshop.com</a></p>
-            <p>📱 Follow me on <a href="#">[Your Social Media Links]</a></p>
-        </div>
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="explore.html">Explore</a>
+        <a href="signup.html">Sign Up</a>
+        <a href="login.html">Log In</a>
     </div>
+
+    <div class="slideshow-container">
+        <img src="ab.png" alt="Photo 1" class="slide active">
+        <img src="ac.png" alt="Photo 2" class="slide">
+        <img src="ad.png" alt="Photo 3" class="slide">
+        <img src="ae.png" alt="Photo 4" class="slide">
+        <button class="prev" onclick="changeSlide(-1)">❮</button>
+        <button class="next" onclick="changeSlide(1)">❯</button>
+    </div>
+
+    <div class="contact-info">
+        📧 <a href="mailto:jaebookshop@email.com">Email</a> |
+        🌐 <a href="https://jaebookshop.com">Website</a> |
+        📱 Follow:
+        <a href="https://www.facebook.com/people/JA-EbookShop/" target="_blank">
+            <img src="facebook.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/qiao_di_an" target="_blank">
+            <img src="instagram.png" alt="Instagram">
+        </a>
+        <a href="https://www.tiktok.com/@digitalpulse_market" target="_blank">
+            <img src="tiktok.png" alt="TikTok">
+        </a>
+    </div>
+
+    <script>
+        let slideIndex = 0;
+        let slides = document.querySelectorAll(".slide");
+
+        function showSlides() {
+            slides.forEach((slide, index) => {
+                slide.classList.toggle("active", index === slideIndex);
+            });
+        }
+
+        function changeSlide(n) {
+            slideIndex = (slideIndex + n + slides.length) % slides.length;
+            showSlides();
+        }
+
+        showSlides();
+    </script>
 </body>
 </html>
